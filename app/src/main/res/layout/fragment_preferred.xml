@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.bearya.mobile.data.model.MainViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/everyday_story"
+                style="@style/TextAppearance.flow.textIcon"
+                android:layout_marginTop="12dp"
+                android:padding="8dp"
+                android:text="@string/every_story"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:fontFamily="serif-monospace"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/story_pager"
+                style="@style/CardStyle.background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/everyday_story">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.sentence"
+                    android:text="@{viewModel.story??@string/default_story}"
+                    tools:text="@string/default_story" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.constraintlayout.helper.widget.Flow
+                android:id="@+id/tab_flow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="10dp"
+                app:constraint_referenced_ids="encyclopedias,english,history,sleep,literature,nursery_rhymes,music,story"
+                app:flow_horizontalGap="10dp"
+                app:flow_maxElementsWrap="4"
+                app:flow_verticalGap="10dp"
+                app:flow_wrapMode="aligned"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/story_pager" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/english"
+                style="@style/TextAppearance.flow.textIcon"
+                android:text="@string/preferred_module_english"
+                app:drawableTopCompat="@mipmap/ic_image_english" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/nursery_rhymes"
+                style="@style/TextAppearance.flow.textIcon"
+                android:text="@string/preferred_module_nursery_rhymes"
+                app:drawableTopCompat="@mipmap/ic_image_nursery_rhymes" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/encyclopedias"
+                style="@style/TextAppearance.flow.textIcon"
+                android:text="@string/preferred_module_encyclopedias"
+                app:drawableTopCompat="@mipmap/ic_image_encyclopedias" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/music"
+                style="@style/TextAppearance.flow.textIcon"
+                android:text="@string/preferred_module_music"
+                app:drawableTopCompat="@mipmap/ic_image_music" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/history"
+                style="@style/TextAppearance.flow.textIcon"
+                android:text="@string/preferred_module_history"
+                app:drawableTopCompat="@mipmap/ic_image_history" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/literature"
+                style="@style/TextAppearance.flow.textIcon"
+                android:text="@string/preferred_module_literature"
+                app:drawableTopCompat="@mipmap/ic_image_literature" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/story"
+                style="@style/TextAppearance.flow.textIcon"
+                android:text="@string/preferred_module_story"
+                app:drawableTopCompat="@mipmap/ic_image_story" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/sleep"
+                style="@style/TextAppearance.flow.textIcon"
+                android:text="@string/preferred_module_sleep"
+                app:drawableTopCompat="@mipmap/ic_image_sleep" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/families_tooltips"
+                style="@style/TextAppearance.flow.textIcon"
+                android:layout_marginTop="12dp"
+                android:padding="8dp"
+                android:text="@string/story_family"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:fontFamily="serif-monospace"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tab_flow" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/families"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:clipChildren="false"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/families_tooltips" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/teacher_avatar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/families_tooltips"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/teacher_name_switcher"
+                style="@style/TextAppearance.list.textIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center_vertical"
+                android:paddingStart="1dp"
+                android:paddingEnd="1dp"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/teacher_works_switcher"
+                app:layout_constraintStart_toEndOf="@id/teacher_avatar"
+                app:layout_constraintTop_toTopOf="@id/teacher_avatar"
+                tools:text="@string/family_name_tooltips" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/teacher_works_switcher"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/shape_rec_solid_orange_12"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:paddingStart="1dp"
+                android:paddingEnd="1dp"
+                android:singleLine="true"
+                android:textColor="@color/gray_1"
+                app:layout_constraintBottom_toBottomOf="@id/teacher_avatar"
+                app:layout_constraintStart_toEndOf="@id/teacher_avatar"
+                app:layout_constraintTop_toBottomOf="@id/teacher_name_switcher"
+                tools:text="@string/family_works_tooltips" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/teacher_introduce_switcher"
+                style="@style/TextAppearance.list.textIcon"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center_vertical"
+                android:lines="3"
+                android:maxLines="3"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/families"
+                app:layout_constraintEnd_toStartOf="@id/families"
+                app:layout_constraintStart_toStartOf="@id/teacher_avatar"
+                app:layout_constraintTop_toBottomOf="@id/teacher_works_switcher"
+                tools:text="@string/family_introduce_tooltips" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/rainbow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/books"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/families"
+                app:srcCompat="@mipmap/ic_image_rainbow" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/books"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/rainbow"
+                app:layout_constraintTop_toBottomOf="@id/families"
+                app:srcCompat="@mipmap/ic_image_books" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

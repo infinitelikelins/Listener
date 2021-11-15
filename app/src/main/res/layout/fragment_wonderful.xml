@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.bearya.mobile.data.model.MainViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        style="@style/layoutAppearance.FullSize"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/layoutAppearance.autoHeightSize"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/everyday_story"
+                style="@style/TextAppearance.flow.textIcon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/every_poetry"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:fontFamily="serif-monospace"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/today_sentence"
+                style="@style/CardStyle.background"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/everyday_story">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.sentence"
+                    android:text="@{viewModel.sentence??@string/default_sentence}"
+                    tools:text="@string/default_sentence" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.constraintlayout.helper.widget.Flow
+                android:id="@+id/tab_flow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="10dp"
+                app:constraint_referenced_ids="teacher,essay,text,book,level"
+                app:flow_horizontalGap="10dp"
+                app:flow_maxElementsWrap="5"
+                app:flow_verticalGap="10dp"
+                app:flow_wrapMode="aligned"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/today_sentence" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/teacher"
+                style="@style/TextAppearance.flow.textIcon"
+                android:text="@string/wonderful_module_teacher"
+                app:drawableTopCompat="@drawable/ic_baseline_teacher_64" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/essay"
+                style="@style/TextAppearance.flow.textIcon"
+                android:text="@string/wonderful_module_essay"
+                app:drawableTopCompat="@drawable/ic_baseline_essay_64" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text"
+                style="@style/TextAppearance.flow.textIcon"
+                android:text="@string/wonderful_module_text"
+                app:drawableTopCompat="@drawable/ic_baseline_text_64" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/book"
+                style="@style/TextAppearance.flow.textIcon"
+                android:text="@string/wonderful_module_book"
+                app:drawableTopCompat="@drawable/ic_baseline_book_64" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/level"
+                style="@style/TextAppearance.flow.textIcon"
+                android:text="@string/wonderful_module_level"
+                app:drawableTopCompat="@drawable/ic_baseline_composition_64" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/known_lib"
+                style="@style/layoutAppearance.autoHeightSize"
+                android:layout_height="120dp"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tab_flow"
+                app:srcCompat="@mipmap/ic_image_known_lib" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/writers_tooltips"
+                style="@style/TextAppearance.flow.textIcon"
+                android:padding="8dp"
+                android:text="@string/story_writer"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:fontFamily="serif-monospace"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/known_lib" />
+
+            <androidx.constraintlayout.helper.widget.Flow
+                android:id="@+id/model_flow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                app:constraint_referenced_ids="word,sentence,paragraph"
+                app:flow_horizontalGap="10dp"
+                app:flow_maxElementsWrap="3"
+                app:flow_verticalGap="10dp"
+                app:flow_wrapMode="aligned"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/writers_tooltips" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/word"
+                style="@style/TextAppearance.flow.textIcon"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/shape_rec_volcano_12"
+                android:padding="12dp"
+                android:text="@string/wonderful_module_word"
+                android:textColor="@color/gray_1"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/sentence"
+                style="@style/TextAppearance.flow.textIcon"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/shape_rec_calendula_gold_12"
+                android:padding="12dp"
+                android:text="@string/wonderful_module_sentence"
+                android:textColor="@color/gray_1"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/paragraph"
+                style="@style/TextAppearance.flow.textIcon"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/shape_rec_blue_12"
+                android:padding="12dp"
+                android:text="@string/wonderful_module_paragraph"
+                android:textColor="@color/gray_1"
+                android:textStyle="bold" />
+
+            <androidx.constraintlayout.helper.widget.Flow
+                android:id="@+id/module_flow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                app:constraint_referenced_ids="units,series"
+                app:flow_horizontalGap="10dp"
+                app:flow_maxElementsWrap="2"
+                app:flow_verticalGap="10dp"
+                app:flow_wrapMode="chain"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/model_flow" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/units"
+                style="@style/TextAppearance.flow.textIcon"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:text="@string/wonderful_module_unit"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_baseline_unit_article_64" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/series"
+                style="@style/TextAppearance.flow.textIcon"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:text="@string/wonderful_module_series"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_baseline_series_64" />
+
+            <androidx.constraintlayout.helper.widget.Flow
+                android:id="@+id/other_flow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                app:constraint_referenced_ids="skill,creation"
+                app:flow_horizontalGap="10dp"
+                app:flow_maxElementsWrap="2"
+                app:flow_verticalGap="10dp"
+                app:flow_wrapMode="aligned"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/module_flow" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/skill"
+                style="@style/TextAppearance.flow.textIcon"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/shape_rec_cyan_12"
+                android:padding="12dp"
+                android:text="@string/wonderful_module_skill"
+                android:textColor="@color/gray_1"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/creation"
+                style="@style/TextAppearance.flow.textIcon"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/shape_rec_golden_purple_12"
+                android:padding="12dp"
+                android:text="@string/wonderful_module_theme_creation"
+                android:textColor="@color/gray_1"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/layoutAppearance.autoHeightSize"
+                android:layout_height="80dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="10dp"
+                android:background="@mipmap/ic_image_he_jie_essay"
+                android:gravity="center_vertical"
+                android:letterSpacing="0.6"
+                android:paddingStart="48dp"
+                android:paddingEnd="56dp"
+                android:paddingBottom="12dp"
+                android:text="@string/wonderful_module_he_jie_essay"
+                android:textColor="@color/gray_1"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/other_flow" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

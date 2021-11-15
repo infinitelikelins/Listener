@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">贝芽故事</string>
+
+    <string name="wonderful">学堂</string>
+    <string name="preferred">故事</string>
+    <string name="discover">发现</string>
+    <string name="mine">我的</string>
+
+    <string name="default_user_nick">登录/注册</string>
+    <string name="default_user_phone">***********</string>
+    <string name="user_phone">手机号码</string>
+    <string name="user_phone_hint">请输入你的手机号码</string>
+    <string name="user_password">登录密码</string>
+    <string name="user_sms_code">短信验证</string>
+    <string name="user_sms_code_hint">请输入下发的短信验证码</string>
+    <string name="user_password_hint">请输入你的登录密码</string>
+    <string name="parent_child">亲子关系</string>
+    <string name="user_vip">我的会员</string>
+    <string name="device_manager">设备管理</string>
+    <string name="win_emblem">学习成就</string>
+    <string name="my_collected">我的最爱</string>
+    <string name="known_flag">知识标签</string>
+    <string name="use_record">使用记录</string>
+    <string name="tech_voice">语音技能</string>
+    <string name="question_help">问题帮助</string>
+    <string name="settings">应用设置</string>
+    <string name="default_sentence">
+        《上堂开示颂》\n\n—— 黄櫱禅师(唐)\n\n不经一番寒彻骨，怎得梅花扑鼻香。
+    </string>
+    <string name="default_story">
+        《丑猪》 \n\n猪小伙在大火中救人毁了容，猪小姐还会爱它吗？
+    </string>
+    <string name="wonderful_module_teacher">名师</string>
+    <string name="wonderful_module_essay">范文</string>
+    <string name="wonderful_module_text">课文</string>
+    <string name="wonderful_module_book">听书</string>
+    <string name="wonderful_module_level">作文</string>
+    <string name="wonderful_module_unit">单元作文</string>
+    <string name="wonderful_module_series">名校书单</string>
+    <string name="wonderful_module_word">好词</string>
+    <string name="wonderful_module_sentence">好句</string>
+    <string name="wonderful_module_paragraph">好段</string>
+    <string name="wonderful_module_theme_creation">主题创作</string>
+    <string name="wonderful_module_skill">写作技巧</string>
+    <string name="wonderful_module_he_jie_essay">何捷作文</string>
+
+    <string name="preferred_module_english">英语</string>
+    <string name="preferred_module_nursery_rhymes">儿歌</string>
+    <string name="preferred_module_encyclopedias">百科</string>
+    <string name="preferred_module_music">音乐</string>
+    <string name="preferred_module_history">历史</string>
+    <string name="preferred_module_literature">国学</string>
+    <string name="preferred_module_story">故事</string>
+    <string name="preferred_module_sleep">哄睡</string>
+    <string name="story_writer">我是小作家</string>
+    <string name="story_family">贝芽故事家族</string>
+    <string name="family_introduce_tooltips">《小作家报》文学顾问，台湾儿童文学作家、童诗诗人，他创作的故事风趣幽默接地气，充满想象力。</string>
+    <string name="family_works_tooltips">子鱼叔叔小时候</string>
+    <string name="family_name_tooltips">子鱼老师</string>
+    <string name="every_story">每日故事</string>
+    <string name="every_poetry">今日诗词</string>
+    <string name="every_find">天天新发现</string>
+
+    <string name="log_in">登录</string>
+    <string name="sign_up">注册</string>
+    <string name="privacy_policy">我已阅读并同意《服务协议》、《隐私协议》和《儿童个人信息保护政策》</string>
+    <string name="password_forget">忘记密码</string>
+    <string name="modify_password">修改密码</string>
+    <string name="send_sms_code_hint">获取短信验证码</string>
+
+</resources>

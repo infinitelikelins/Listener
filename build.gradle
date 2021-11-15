@@ -1,0 +1,18 @@
+buildscript {
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${libs.versions.kotlin.version.get()}"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:${libs.versions.navigation.version.get()}"
+    }
+
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

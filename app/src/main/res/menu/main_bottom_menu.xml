@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/fragment_wonderful"
+        android:icon="@drawable/ic_baseline_wonderful_24"
+        android:title="@string/wonderful"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/fragment_preferred"
+        android:icon="@drawable/ic_baseline_preferred_24"
+        android:title="@string/preferred"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/fragment_discover"
+        android:icon="@drawable/ic_baseline_discover_24"
+        android:title="@string/discover"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/fragment_mine"
+        android:icon="@drawable/ic_baseline_account_24"
+        android:title="@string/mine"
+        app:showAsAction="always" />
+
+</menu>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.bearya.mobile.data.model.RegisterViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:attr/colorBackground"
+        android:paddingStart="32dp"
+        android:paddingTop="24dp"
+        android:paddingEnd="32dp"
+        android:paddingBottom="40dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/sign_up"
+            android:textColor="@color/text_color_headline"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:transitionName="@string/sign_up"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.simform.customcomponent.SSCustomEdittextOutlinedBorder
+            android:id="@+id/register_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:inputType="phone"
+            android:minHeight="80dp"
+            app:custom_component_border_color="@color/dust_red_4"
+            app:custom_component_border_error_color="@color/dust_red_4"
+            app:custom_component_border_width="4"
+            app:custom_component_editText_bg_color="?android:attr/colorBackground"
+            app:custom_component_editText_hint="@string/user_phone_hint"
+            app:custom_component_error_text_bg_color="?android:attr/colorBackground"
+            app:custom_component_maxLength="11"
+            app:custom_component_maxline="1"
+            app:custom_component_minline="1"
+            app:custom_component_title="@string/user_phone"
+            app:custom_component_title_bg_color="?android:attr/colorBackground"
+            app:custom_component_title_color="@color/dust_red_4"
+            app:custom_component_title_error_color="@color/dust_red_4"
+            app:errorTextValue="@{viewModel.mPhoneError}"
+            app:isErrorEnable="@{viewModel.mIsPhoneError}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_register"
+            app:textValue="@={viewModel.userPhoneNumber}" />
+
+        <com.simform.customcomponent.SSCustomEdittextOutlinedBorder
+            android:id="@+id/register_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_4"
+            android:inputType="textPassword"
+            android:minHeight="80dp"
+            app:custom_component_border_color="@color/dust_red_4"
+            app:custom_component_border_error_color="@color/dust_red_4"
+            app:custom_component_border_width="4"
+            app:custom_component_editText_bg_color="?android:attr/colorBackground"
+            app:custom_component_editText_hint="@string/user_password_hint"
+            app:custom_component_error_text_bg_color="?android:attr/colorBackground"
+            app:custom_component_maxLength="24"
+            app:custom_component_maxline="1"
+            app:custom_component_minline="1"
+            app:custom_component_title="@string/user_password"
+            app:custom_component_title_bg_color="?android:attr/colorBackground"
+            app:custom_component_title_color="@color/dust_red_4"
+            app:custom_component_title_error_color="@color/dust_red_4"
+            app:errorTextValue="@{viewModel.mPasswordError}"
+            app:isErrorEnable="@{viewModel.mIsPasswordError}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/register_phone"
+            app:layout_goneMarginTop="8dp"
+            app:textValue="@={viewModel.userPassword}" />
+
+        <com.simform.customcomponent.SSCustomEdittextOutlinedBorder
+            android:id="@+id/register_code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_4"
+            android:inputType="number"
+            android:minHeight="80dp"
+            app:custom_component_border_color="@color/dust_red_4"
+            app:custom_component_border_error_color="@color/dust_red_4"
+            app:custom_component_border_width="4"
+            app:custom_component_editText_bg_color="?android:attr/colorBackground"
+            app:custom_component_editText_hint="@string/user_sms_code_hint"
+            app:custom_component_error_text_bg_color="?android:attr/colorBackground"
+            app:custom_component_maxLength="4"
+            app:custom_component_maxline="1"
+            app:custom_component_minline="1"
+            app:custom_component_title="@string/user_sms_code"
+            app:custom_component_title_bg_color="?android:attr/colorBackground"
+            app:custom_component_title_color="@color/dust_red_4"
+            app:custom_component_title_error_color="@color/dust_red_4"
+            app:errorTextValue="@{viewModel.mSmsCodeError}"
+            app:isErrorEnable="@{viewModel.mIsSmsCodeError}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/register_password"
+            app:layout_goneMarginTop="8dp"
+            app:textValue="@={viewModel.userSmsCode}" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/send_sms_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/send_sms_code_hint"
+            android:textColor="@color/dust_red_4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/register_code" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/private_policy_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/transparent"
+            android:checked="false"
+            android:padding="2dp"
+            android:theme="@style/PolicyCheckBox"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/send_sms_code" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/private_policy_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:paddingStart="4dp"
+            android:paddingEnd="2dp"
+            android:text="@{viewModel.protocolText}"
+            android:textColor="@color/text_color_title"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/private_policy_check"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/private_policy_check"
+            app:layout_constraintTop_toTopOf="@id/private_policy_check"
+            tools:text="@string/privacy_policy" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/register_verify"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/ripple_dust_red"
+            android:elevation="0dp"
+            android:text="@string/sign_up"
+            android:textColor="@color/gray_1"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/private_policy_check" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

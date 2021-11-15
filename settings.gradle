@@ -1,0 +1,110 @@
+enableFeaturePreview('VERSION_CATALOGS')
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url "https://maven.aliyun.com/repository/jcenter" }
+    }
+
+    versionCatalogs {
+        libs {
+
+            version("room-version", "2.3.0")
+            version("navigation-version", "2.4.0-beta01")
+            alias("annotation").to('androidx.annotation:annotation:1.2.0')
+            alias("appcompat").to('androidx.appcompat:appcompat:1.3.1')
+            alias("activity-ktx").to('androidx.activity:activity-ktx:1.4.0')
+            alias("core-ktx").to('androidx.core:core-ktx:1.7.0')
+            alias("constraintlayout").to('androidx.constraintlayout:constraintlayout:2.1.0')
+            alias("cardview").to('androidx.cardview:cardview:1.0.0')
+            alias("recyclerview").to('androidx.recyclerview:recyclerview:1.2.0')
+            alias("multidex").to('androidx.multidex:multidex:2.0.1')
+            alias("media").to('androidx.media:media:1.3.0')
+            alias("navigation-fragment-ktx").to("androidx.navigation", "navigation-fragment-ktx").versionRef("navigation-version")
+            alias("navigation-ui-ktx").to("androidx.navigation", "navigation-ui-ktx").versionRef("navigation-version")
+            alias("paging-runtime-ktx").to('androidx.paging:paging-runtime-ktx:3.0.1')
+            alias("work-runtime-ktx").to('androidx.work:work-runtime-ktx:2.7.0')
+            alias("viewpager2").to('androidx.viewpager2:viewpager2:1.0.0')
+            alias("startup-runtime").to('androidx.startup:startup-runtime:1.1.0')
+            alias("concurrent-futures-ktx").to('androidx.concurrent:concurrent-futures-ktx:1.1.0')
+            alias("room-runtime").to("androidx.room", "room-runtime").versionRef("room-version")
+            alias("room-ktx").to("androidx.room", "room-ktx").versionRef("room-version")
+            alias("room-compiler").to("androidx.room", "room-compiler").versionRef("room-version")
+            bundle("androidx", ['annotation', 'appcompat', 'activity-ktx', 'core-ktx', 'constraintlayout',
+                                'cardview', 'recyclerview', 'multidex', 'media', 'navigation-fragment-ktx',
+                                'navigation-ui-ktx', 'paging-runtime-ktx', 'viewpager2', 'work-runtime-ktx',
+                                'startup-runtime', 'room-runtime', 'room-ktx', 'concurrent-futures-ktx'])
+
+            alias("google-coil").to('io.coil-kt:coil:1.3.2')
+            alias("google-gson").to('com.google.code.gson:gson:2.8.7')
+            alias("google-material").to('com.google.android.material:material:1.4.0')
+            bundle("google", ['google-gson', 'google-material', 'google-coil'])
+
+            version("dialogX-version", "0.0.43.beta19")
+            alias("dialogX-core").to("com.github.kongzue.DialogX", "DialogX").versionRef("dialogX-version")
+            alias("dialogX-MIUIStyle").to("com.github.kongzue.DialogX", "DialogXMIUIStyle").versionRef("dialogX-version")
+            alias("dialogX-IOSStyle").to("com.github.kongzue.DialogX", "DialogXIOSStyle").versionRef("dialogX-version")
+            bundle("dialogX", ["dialogX-core", "dialogX-MIUIStyle", "dialogX-IOSStyle"])
+
+            alias("retrofit-core").to('com.squareup.retrofit2:retrofit:2.9.0')
+            alias("retrofit-gson").to('com.squareup.retrofit2:converter-gson:2.9.0')
+            alias("retrofit-okhttp").to('com.squareup.okhttp3:okhttp:4.9.1')
+            alias("retrofit-logging").to('com.squareup.okhttp3:logging-interceptor:4.9.1')
+            bundle("retrofit", ["retrofit-core", "retrofit-gson", "retrofit-okhttp", "retrofit-logging"])
+
+            version("lifecycle-version", "2.4.0")
+            alias("lifecycle-viewmodel-savedstate").to("androidx.lifecycle", "lifecycle-viewmodel-savedstate").versionRef("lifecycle-version")
+            alias("lifecycle-runtime-ktx").to("androidx.lifecycle", "lifecycle-runtime-ktx").versionRef("lifecycle-version")
+            alias("lifecycle-livedata-ktx").to("androidx.lifecycle", "lifecycle-livedata-ktx").versionRef("lifecycle-version")
+            alias("lifecycle-viewmodel-ktx").to("androidx.lifecycle", "lifecycle-viewmodel-ktx").versionRef("lifecycle-version")
+            alias("lifecycle-reactivestreams-ktx").to("androidx.lifecycle", "lifecycle-reactivestreams-ktx").versionRef("lifecycle-version")
+            alias("lifecycle-service").to("androidx.lifecycle", "lifecycle-service").versionRef("lifecycle-version")
+            alias("lifecycle-process").to("androidx.lifecycle", "lifecycle-process").versionRef("lifecycle-version")
+            alias("lifecycle-common-java8").to("androidx.lifecycle", "lifecycle-common-java8").versionRef("lifecycle-version")
+            bundle("lifecycle", ["lifecycle-viewmodel-savedstate", "lifecycle-runtime-ktx", "lifecycle-livedata-ktx", "lifecycle-service",
+                                 "lifecycle-viewmodel-ktx", "lifecycle-reactivestreams-ktx", "lifecycle-process", "lifecycle-common-java8"])
+
+            version("kotlin-version", '1.5.31')
+            version("kotlinx_coroutines_version", '1.5.1')
+            alias("kotlin-stdlib-jdk7").to("org.jetbrains.kotlin", "kotlin-stdlib-jdk7").versionRef("kotlin-version")
+            alias("kotlin-stdlib-jdk8").to("org.jetbrains.kotlin", "kotlin-stdlib-jdk8").versionRef("kotlin-version")
+            alias("kotlinx-coroutines-core").to("org.jetbrains.kotlinx", "kotlinx-coroutines-core").versionRef("kotlinx_coroutines_version")
+            alias("kotlinx-coroutines-android").to("org.jetbrains.kotlinx", "kotlinx-coroutines-android").versionRef("kotlinx_coroutines_version")
+            bundle("kotlin", ["kotlin-stdlib-jdk7", "kotlin-stdlib-jdk8", "kotlinx-coroutines-core", "kotlinx-coroutines-android"])
+
+            alias("crash").to('com.tencent.bugly:crashreport:3.4.4')
+            alias("mmkv").to('com.tencent:mmkv-static:1.2.10')
+            bundle("tencent", ['mmkv', 'crash'])
+
+            alias('toasty').to('com.github.GrenderG:Toasty:1.5.0')
+            alias('lottie').to('com.airbnb.android:lottie:4.2.0')
+            alias('starrySky').to('com.github.EspoirX:StarrySky:2.6.5')
+            alias('basePopup').to('io.github.razerdp:BasePopup:3.1.8')
+            alias('logger').to('com.orhanobut:logger:2.2.0')
+            alias('kprogresshud').to('com.kaopiz:kprogresshud:1.2.0')
+            alias('alerter').to('com.tapadoo.android:alerter:7.0.1')
+            alias('vegaLayoutManager').to('com.stone.vega.library:VegaLayoutManager:1.0.6')
+            alias('switcher').to('com.bitvale:switcher:1.1.1')
+            alias('jinrishici').to('com.jinrishici:android-sdk:1.5')
+            alias('ssCustomEditTextOutLineBorder').to('com.github.simformsolutions:SSCustomEditTextOutLineBorder:1.0.12')
+            alias('baseRecyclerViewAdapterHelper').to('com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.6')
+            alias('viewpagerlayoutmanager').to('rouchuan.viewpagerlayoutmanager:viewpagerlayoutmanager:2.0.22')
+            alias('easypermissions').to('com.vmadalin:easypermissions-ktx:1.0.0')
+
+            bundle("widget", ['toasty', 'lottie', 'starrySky',
+                              'basePopup', 'logger',
+                              'kprogresshud', 'alerter', 'vegaLayoutManager',
+                              'switcher', 'jinrishici',
+                              'ssCustomEditTextOutLineBorder', 'baseRecyclerViewAdapterHelper',
+                              'viewpagerlayoutmanager','easypermissions'])
+
+        }
+    }
+}
+
+rootProject.name = "Listener"
+include ':app'

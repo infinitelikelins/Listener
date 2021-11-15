@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/fragment_wonderful">
+
+    <fragment
+        android:id="@+id/fragment_wonderful"
+        android:name="com.bearya.mobile.fragment.WonderfulFragment"
+        android:label="@string/wonderful"
+        tools:layout="@layout/fragment_wonderful" />
+
+    <fragment
+        android:id="@+id/fragment_preferred"
+        android:name="com.bearya.mobile.fragment.PreferredFragment"
+        android:label="@string/wonderful"
+        tools:layout="@layout/fragment_preferred" />
+
+    <fragment
+        android:id="@+id/fragment_discover"
+        android:name="com.bearya.mobile.fragment.DiscoverFragment"
+        android:label="@string/wonderful"
+        tools:layout="@layout/fragment_discover" />
+
+    <fragment
+        android:id="@+id/fragment_mine"
+        android:name="com.bearya.mobile.fragment.MineFragment"
+        android:label="@string/wonderful"
+        tools:layout="@layout/fragment_mine" />
+
+</navigation>

@@ -1,0 +1,155 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.Listener" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/gray_1</item>
+        <item name="colorOnPrimary">@color/gray_1</item>
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/gray_15</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="M">true</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/gray_1</item>
+        <item name="android:elevation">0dp</item>
+    </style>
+
+    <style name="PolicyCheckBox" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/gray_6</item>
+        <item name="colorControlActivated">@color/dust_red_4</item>
+        <item name="android:textColor">@color/text_color_primary</item>
+    </style>
+
+    <style name="ShapeAppearance.circle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">25%</item>
+    </style>
+
+    <style name="layoutAppearance.noSize" parent="">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
+    <style name="layoutAppearance.autoHeightSize" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="layoutAppearance.autoWidthSize" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="layoutAppearance.FullSize" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="layoutAppearance.FlowSize" parent="">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TextAppearance.flow.tab" parent="layoutAppearance.FlowSize">
+        <item name="android:textSize">18sp</item>
+        <item name="android:drawablePadding">24dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:textColor">@color/text_color_title</item>
+        <item name="android:drawableEnd">@drawable/ic_baseline_chevron_right_24</item>
+    </style>
+
+    <style name="TextAppearance.flow.textIcon" parent="layoutAppearance.FlowSize">
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/text_color_headline</item>
+    </style>
+
+    <style name="TextAppearance.list" parent="layoutAppearance.autoHeightSize">
+        <item name="android:textSize">18sp</item>
+        <item name="android:drawablePadding">24dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:textColor">@color/text_color_title</item>
+        <item name="android:drawableEnd">@drawable/ic_baseline_chevron_right_24</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">12dp</item>
+    </style>
+
+    <style name="TextAppearance.list.textIcon" parent="layoutAppearance.FullSize">
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/text_color_headline</item>
+    </style>
+
+    <style name="TextAppearance.list.textIcon.2" parent="TextAppearance.list.textIcon">
+        <item name="android:layout_weight">0.5</item>
+    </style>
+
+    <style name="TextAppearance.list.textIcon.3" parent="TextAppearance.list.textIcon">
+        <item name="android:layout_weight">0.333</item>
+    </style>
+
+    <style name="TextAppearance.list.textIcon.5" parent="TextAppearance.list.textIcon">
+        <item name="android:layout_weight">0.2</item>
+    </style>
+
+    <style name="TextAppearance.list.textIcon.4" parent="TextAppearance.list.textIcon">
+        <item name="android:layout_weight">0.25</item>
+    </style>
+
+    <style name="TextAppearance.list.divider" parent="TextAppearance.list">
+        <item name="android:layout_marginTop">16dp</item>
+    </style>
+
+    <style name="TextAppearance.title" parent="">
+        <item name="android:textColor">@color/text_color_title</item>
+    </style>
+
+    <style name="TextAppearance.primary" parent="">
+        <item name="android:textColor">@color/text_color_primary</item>
+    </style>
+
+    <style name="DrawableTint.menuColor" parent="">
+        <item name="itemIconTint">@color/bottom_menu_color</item>
+        <item name="itemTextColor">@color/bottom_menu_color</item>
+    </style>
+
+    <style name="TextAppearance.sentence" parent="layoutAppearance.autoHeightSize">
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:lineSpacingExtra">@dimen/dp_4</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/text_color_primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.15</item>
+    </style>
+
+    <style name="CardStyle.background" parent="layoutAppearance.autoHeightSize">
+        <item name="cardPreventCornerOverlap">true</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardBackgroundColor">@color/calendula_gold_3</item>
+    </style>
+
+    <color name="drawable_account_color">@color/gray_8</color>
+    <color name="drawable_settings_color">@color/gray_8</color>
+    <color name="drawable_article_color">@color/gray_8</color>
+
+    <color name="text_color_headline">#FF000000</color>
+    <color name="text_color_title">#D9000000</color>
+    <color name="text_color_primary">#A6000000</color>
+    <color name="text_color_secondary">#73000000</color>
+    <color name="text_color_disable">#40000000</color>
+    <color name="text_color_border">#26000000</color>
+    <color name="text_color_dividers">#0F000000</color>
+    <color name="text_color_background">#0A000000</color>
+    <color name="text_color_table_header">#05000000</color>
+
+</resources>

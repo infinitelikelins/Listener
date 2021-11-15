@@ -1,0 +1,85 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    compileSdkVersion 31
+    buildToolsVersion = '31.0.0'
+    defaultConfig {
+        applicationId "com.bearya.mobile.listener"
+        minSdkVersion 21
+        targetSdkVersion 31
+        versionCode 10000
+        versionName "1.0.0"
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary true
+        renderscriptTargetApi 21
+        renderscriptSupportModeEnabled true
+        buildFeatures {
+            dataBinding true
+        }
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation"  : "$projectDir/schemas".toString(),
+                             "room.expandProjection": "true"]
+            }
+        }
+    }
+
+    signingConfigs {
+        config {
+            keyAlias 'BeiYa'
+            storePassword 'BeiYa123'
+            storeFile file('../bearya_keystore.jks')
+            keyPassword 'BeiYa!@#'
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            buildConfigField "String", "ApiUrl", BASE_URL
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            debuggable false
+            minifyEnabled false
+            buildConfigField "String", "ApiUrl", BASE_URL
+            signingConfig signingConfigs.config
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+        freeCompilerArgs += ["-Xopt-in=kotlin.RequiresOptIn"]
+    }
+    buildFeatures {
+        viewBinding true
+    }
+
+}
+
+dependencies {
+
+    implementation libs.bundles.dialogX
+    implementation libs.bundles.retrofit
+    implementation libs.bundles.lifecycle
+    implementation libs.bundles.kotlin
+    implementation libs.bundles.androidx
+    implementation libs.bundles.google
+    implementation libs.bundles.tencent
+    implementation libs.bundles.widget
+
+    kapt libs.annotation
+    kapt libs.room.compiler
+
+}

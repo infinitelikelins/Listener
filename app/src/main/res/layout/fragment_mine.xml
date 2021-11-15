@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="userViewModel"
+            type="com.bearya.mobile.data.model.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/layoutAppearance.FullSize">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/user_avatar"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:scaleType="centerCrop"
+            app:error="@{@drawable/ic_baseline_account_box_24}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.05"
+            app:layout_constraintWidth_percent="0.3"
+            app:loadUrl="@{userViewModel.avatar}"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.circle"
+            app:srcCompat="@drawable/ic_baseline_account_box_24" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user_nick"
+            style="@style/TextAppearance.title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:drawablePadding="8dp"
+            android:gravity="center"
+            android:maxLines="1"
+            android:padding="3dp"
+            android:text="@{userViewModel.username??@string/default_user_nick}"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:drawableEndCompat="@drawable/selector_member_state"
+            app:layout_constraintStart_toEndOf="@id/user_avatar"
+            app:layout_constraintTop_toTopOf="@id/user_avatar"
+            app:selected="@{userViewModel.isVip}"
+            tools:text="@string/default_user_nick" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user_phone"
+            style="@style/TextAppearance.primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:drawablePadding="8dp"
+            android:gravity="start"
+            android:padding="4dp"
+            android:text="@{userViewModel.phone??@string/default_user_phone}"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/user_avatar"
+            app:layout_constraintStart_toEndOf="@id/user_avatar"
+            tools:text="@string/default_user_phone" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_avatar">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/user_vip"
+                    style="@style/TextAppearance.list"
+                    android:text="@string/user_vip"
+                    app:drawableStartCompat="@drawable/ic_baseline_vip_24" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/parent_child"
+                    style="@style/TextAppearance.list"
+                    android:text="@string/parent_child"
+                    app:drawableStartCompat="@drawable/ic_baseline_parent_child_24" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/devices_manager"
+                    style="@style/TextAppearance.list.divider"
+                    android:text="@string/device_manager"
+                    app:drawableStartCompat="@drawable/ic_baseline_devices_24" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/win_emblem"
+                    style="@style/TextAppearance.list"
+                    android:text="@string/win_emblem"
+                    app:drawableStartCompat="@drawable/ic_baseline_emblem_24" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/my_collected"
+                    style="@style/TextAppearance.list"
+                    android:text="@string/my_collected"
+                    app:drawableStartCompat="@drawable/ic_baseline_collect_24" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/known_flag"
+                    style="@style/TextAppearance.list"
+                    android:text="@string/known_flag"
+                    app:drawableStartCompat="@drawable/ic_baseline_amp_stories_24" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/use_record"
+                    style="@style/TextAppearance.list"
+                    android:text="@string/use_record"
+                    app:drawableStartCompat="@drawable/ic_baseline_format_list_bulleted_24" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tech_voice"
+                    style="@style/TextAppearance.list"
+                    android:text="@string/tech_voice"
+                    app:drawableStartCompat="@drawable/ic_baseline_voice_print_24" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/question_help"
+                    style="@style/TextAppearance.list"
+                    android:text="@string/question_help"
+                    app:drawableStartCompat="@drawable/ic_baseline_help_outline_24" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/settings"
+                    style="@style/TextAppearance.list.divider"
+                    android:text="@string/settings"
+                    app:drawableStartCompat="@drawable/ic_baseline_settings_24" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
