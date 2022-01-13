@@ -1,11 +1,14 @@
 package com.bearya.mobile.data.repository
 
-import com.bearya.mobile.component.Api
+import com.bearya.mobile.http.Api
 import com.bearya.mobile.data.bean.UserBean
+import com.tencent.mmkv.MMKV
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 object UserRepository {
+
+    private val kv = MMKV.defaultMMKV()
 
     val id: Int
         get() = kv.decodeInt("id", 0)

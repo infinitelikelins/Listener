@@ -51,7 +51,19 @@
             </intent-filter>
         </receiver>
 
-    </application>
+        <activity
+            android:name="com.vmadalin.easypermissions.components.TestActivity"
+            tools:node="remove"
+            tools:ignore="MissingClass" />
+        <activity
+            android:name="com.vmadalin.easypermissions.components.TestAppCompatActivity"
+            tools:node="remove"
+            tools:ignore="MissingClass" />
+        <activity
+            android:name="com.vmadalin.easypermissions.components.TestSupportFragmentActivity"
+            tools:node="remove"
+            tools:ignore="MissingClass" />
 
+    </application>
 
 </manifest>

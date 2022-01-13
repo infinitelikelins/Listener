@@ -3,7 +3,6 @@ package com.bearya.mobile.activity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -11,7 +10,6 @@ import androidx.fragment.app.FragmentManager
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
-import com.bearya.mobile.data.model.MainViewModel
 import com.bearya.mobile.listener.R
 import com.bearya.mobile.listener.databinding.ActivityMainBinding
 

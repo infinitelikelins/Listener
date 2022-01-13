@@ -1,8 +1,7 @@
-package com.bearya.mobile.component
+package com.bearya.mobile.http
 
 import com.bearya.mobile.data.bean.LoginBean
 import com.bearya.mobile.data.bean.NewsBean
-import com.bearya.mobile.tools.HttpResult
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
