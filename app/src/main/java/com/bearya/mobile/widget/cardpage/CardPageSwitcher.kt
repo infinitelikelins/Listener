@@ -36,9 +36,12 @@ class CardPageSwitcher(
         }
 
     init {
-        viewPager2.adapter = pagerAdapter
-        CardPageTransformer().with(viewPager2)
-        viewPager2.registerOnPageChangeCallback(pageChangeCallback)
+        viewPager2.apply {
+            adapter = pagerAdapter
+            offscreenPageLimit = 3
+            setPageTransformer(CardPageTransformer())
+            registerOnPageChangeCallback(pageChangeCallback)
+        }
         nameSwitcher.setOnClickListener(this)
         groupNameSwitcher.setOnClickListener(this)
         introduceSwitcher.setOnClickListener(this)

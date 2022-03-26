@@ -47,13 +47,13 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
                 formMessage(isPasswordError = true, passwordError = "请输入登录密码")
             else -> {
                 formMessage()
-                UserRepository.userLogin(viewModelScope, userPhoneNumber!!, userPassword!!, successFunc, {
+                UserRepository.userLogin(viewModelScope, userPhoneNumber!!, userPassword!!, successFunc) {
                     when {
                         it.message?.contains("帐号") == true -> formMessage(isPhoneError = true, phoneError = "${it.message}")
                         it.message?.contains("密码") == true -> formMessage(isPasswordError = true, passwordError = "${it.message}")
                         else -> Toasty.warning(getApplication<Application>().applicationContext,"服务异常,登录失败").show()
                     }
-                })
+                }
             }
         }
     }

@@ -9,8 +9,8 @@ import kotlin.math.abs
 import kotlin.math.max
 import kotlin.math.min
 
-class CardPageTransformer(private val mViewType: Int = CARD_STACK,
-                          private val mMaxShowPage: Int = 3) : ViewPager2.PageTransformer {
+class CardPageTransformer(private val mViewType: Int = CARD_STACK)
+    : ViewPager2.PageTransformer {
 
     companion object {
         const val POP = 1
@@ -550,11 +550,6 @@ class CardPageTransformer(private val mViewType: Int = CARD_STACK,
             }
             else -> page.alpha = 0f
         }
-    }
-
-    fun with(viewPager2: ViewPager2?) {
-        viewPager2?.offscreenPageLimit = mMaxShowPage
-        viewPager2?.setPageTransformer(CardPageTransformer())
     }
 
 }

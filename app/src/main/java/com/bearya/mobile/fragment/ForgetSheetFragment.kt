@@ -17,7 +17,7 @@ class ForgetSheetFragment : BottomSheetDialogFragment(), View.OnClickListener {
     private val viewModel: ForgetViewModel by viewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        bindView = DataBindingUtil.inflate(inflater, R.layout.sheet_forget, container, false)
+        bindView = SheetForgetBinding.inflate(inflater, container, false)
         return bindView.apply { lifecycleOwner = viewLifecycleOwner }.root
     }
 

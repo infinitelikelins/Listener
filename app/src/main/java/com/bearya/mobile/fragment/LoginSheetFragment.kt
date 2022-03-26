@@ -6,7 +6,6 @@ import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.bearya.mobile.data.model.LoginViewModel
@@ -27,7 +26,7 @@ class LoginSheetFragment : BottomSheetDialogFragment(), View.OnClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        bindView = DataBindingUtil.inflate(inflater, R.layout.sheet_login, container, false)
+        bindView = SheetLoginBinding.inflate(inflater, container, false)
         return bindView.apply { lifecycleOwner = viewLifecycleOwner }.root
     }
 
